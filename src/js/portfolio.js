@@ -18,4 +18,3 @@ $('#nav-toggle').on('click', function () {
     $(this).toggleClass('is-active')
     $('ul.nav').toggleClass('show');
 });
-

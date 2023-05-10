@@ -1,6 +1,4 @@
 import './css/App.css';
-import './js/vendors/bootstrap/bootstrap.affix.js'
-import './js/portfolio.js'
 import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -9,6 +7,8 @@ import About from './components/About';
 import Portfolio from './components/Portfolio';
 import Testmonials from './components/Testimonials';
 import Interests from './components/Interests';
+import React from 'react';
+
 
 function App() {
   return (
