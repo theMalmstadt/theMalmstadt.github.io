@@ -1,6 +1,7 @@
 import React from "react";
 import Man from '../assets/man.png'
-// import { Link } from "react-router-dom";
+import Resume from '../assets/RESUME_NoPersonalInfo.pdf'
+import { Link } from "react-router-dom";
 
 const About = () => {
     return (
@@ -15,15 +16,24 @@ const About = () => {
                         <p className="section-subtitle">Who Am I ?</p>
                         <h2 className="section-title mb-3">About Me</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae aliquid ad provident aut
-                            fuga animi soluta quae eos non cupiditate voluptates dolorem, doloremque quos dicta quibusdam
-                            impedit iure nemo a iste
-                            <br />culpa! Quasi quibusdam hic recusandae delectus velit officiis explicabo voluptatibus! Nemo
-                            esse similique, voluptates labore distinctio, placeat explicabo facilis molestias, blanditiis
-                            culpa iusto voluptatem ratione eligendi a, quia temporibus velit vero ipsa sint ex voluptatum
-                            expedita aliquid! Debitis, nam!
+                            I enjoy long walk on... just kidding. Hello! Welcome to my portfolio. I am a passionate Oject-oriented programmer.
+                            I specialize in Python and studied .NET framework with C# in school.
+                            <br />
+                            I have couple of personal porjects that I'm working on and a few that I've finished. I hope to continue my Professional work, working with OOP
+                            languages and a communicative team. I love working in teams and I have easily adapted to the working from
+                            home environment.
+                            <br />
+                            Thanks for checking out my portfolio! If you wanna get in touch check out my LinkedIn (
+                            <Link to="https://www.linkedin.com/in/jacob-malmstadt/" target="_blank">
+                                <i className="ti-linkedin social-links text-center m-auto ml-sm-auto"></i>
+                            </Link>
+                            ) below!
                         </p>
-                        <button className="btn-rounded btn btn-outline-primary mt-4">Download CV</button>
+                        <Link to={Resume} download="Jacob_Resume" target="_blank">
+                            <button className="btn-rounded btn btn-outline-primary mt-4">Download Resume</button>
+                        </Link>
+
+
                     </div>
                 </div>
             </div>

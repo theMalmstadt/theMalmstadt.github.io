@@ -1,14 +1,66 @@
 import React from 'react'
 import '../css/vendors/themify-icons/css/themify-icons.css'
 
-import img1 from '../assets/img-1.jpg'
-import img2 from '../assets/img-2.jpg'
+const HackerNewsPosts = ({ posts }) => {
+    if (posts.length === 0) {
+        return <div>Loading...</div>
+    }
+    return (
+        <div className="container text-center">
+            <h4>HackerNews</h4>
+            <ul className='list-group list-group-flush'>
+                {posts.map(post => (
+                    <li className='list-group-item' key={post.id}>
+                        <a href={post.url}>{post.title}</a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
+}
 
 const Interests = () => {
+    const [posts, setPosts] = React.useState([])
+
+    React.useEffect(() => {
+        async function getTopStories() {
+            const url = "https://hacker-news.firebaseio.com/v0/topstories.json"
+            try {
+                const response = await fetch(url)
+                if (response.ok === false) {
+                    throw new Error("Response Error:" + response.text)
+                }
+                const json = await response.json()
+                const promises = json
+                    .slice(0, 10)
+                    .map(id =>
+                        fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(
+                            response => response.json()
+                        )
+                    )
+                const result = await Promise.all(promises)
+                setPosts(result)
+            } catch (err) {
+                console.error(err)
+            }
+        }
+        getTopStories()
+    }, [])
     return (
         <section className="section" id="interests">
-
             <div className="container text-center">
+                <p className="section-subtitle">What Interest me?</p>
+                <h6 className="section-title mb-6">Interests</h6>
+                <HackerNewsPosts posts={posts} />
+            </div>
+        </section>
+    )
+}
+
+export default Interests
+
+
+/* <div className="container text-center">
                 <p className="section-subtitle">What Interest me?</p>
                 <h6 className="section-title mb-6">Interests</h6>
 
@@ -65,9 +117,4 @@ const Interests = () => {
                     </div>
                 </div>
 
-            </div>
-        </section>
-    )
-}
-
-export default Interests
+            </div> */

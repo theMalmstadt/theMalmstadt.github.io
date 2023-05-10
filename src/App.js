@@ -1,4 +1,6 @@
 import './css/App.css';
+import './js/vendors/bootstrap/bootstrap.affix.js'
+import './js/portfolio.js'
 import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';

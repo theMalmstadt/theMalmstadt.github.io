@@ -1,5 +1,4 @@
 import React from "react";
-import '../js/portfolio.js'
 import { Link, animateScroll as scroll } from "react-scroll";
 
 
