@@ -1,17 +1,29 @@
-import React from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
-import '../js/portfolio.js'
-
+import { React, useState, useEffect } from "react";
+import { Link, animateScroll as scrolling } from "react-scroll";
 
 const Navbar = () => {
     const scrollToTop = () => {
-        scroll.scrollToTop();
+        scrolling.scrollToTop();
     };
+
+    const [isActiveClick, setActiveClick] = useState(false)
+
+    const handleClick = () => {
+        setActiveClick(!isActiveClick)
+    }
+
+    const [scroll, setScroll] = useState(false);
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            setScroll(window.scrollY > 50);
+        });
+    }, []);
+
     return (
-        <nav className="custom-navbar" data-spy="affix" data-offset-top="20">
+        <nav className={scroll ? "custom-navbar affix" : "custom-navbar affix-top"}>
             <div className="container">
                 <button className="logo" onClick={scrollToTop}>Jacob</button>
-                <ul className="nav">
+                <ul className={isActiveClick ? "nav show" : "nav"} onClick={handleClick}>
                     <li className="item">
                         <Link
                             activeClass="deactive"
@@ -86,7 +98,7 @@ const Navbar = () => {
                         <a href="components.html" className="btn btn-primary">Components</a>
                     </li>
                 </ul>
-                <div className="hamburger hamburger--elastic" id="nav-toggle" >
+                <div className={isActiveClick ? "hamburger hamburger--elastic is-active" : "hamburger hamburger--elastic"} id="nav-toggle" onClick={handleClick} >
                     <div className="hamburger-box">
                         <div className="hamburger-inner"></div>
                     </div>

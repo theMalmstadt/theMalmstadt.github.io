@@ -13,7 +13,7 @@ import React from 'react';
 function App() {
   return (
     <Router>
-      <div className='App' id='home' data-spy="scroll" data-target=".navbar" data-offset="40">
+      <div className='App' id='home'>
         <Navbar />
         <Header />
         <About />

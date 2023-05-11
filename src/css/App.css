@@ -12822,8 +12822,16 @@ pre .code {
 }
 
 .custom-navbar .nav .item .link:hover,
-.custom-navbar .nav .item .link.active {
+.custom-navbar.affix-top .nav .item .link:hover,
+.custom-navbar.affix .nav .item .link:hover,
+.custom-navbar .nav .item .link.active,
+.custom-navbar.affix-top .nav .item .link.active,
+.custom-navbar.affix .nav .item .link.active {
   color: #695aa6;
+}
+
+.custom-navbar.affix .nav .item .link {
+  color: #6c757d;
 }
 
 .custom-navbar.affix {
@@ -12847,10 +12855,6 @@ pre .code {
 
 .custom-navbar.affix .container {
   min-height: 65px;
-}
-
-.custom-navbar.affix .nav .item .link {
-  color: #6c757d;
 }
 
 .custom-navbar.affix .hamburger-inner,

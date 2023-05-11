@@ -16,7 +16,7 @@ const About = () => {
                         <p className="section-subtitle">Who Am I ?</p>
                         <h2 className="section-title mb-3">About Me</h2>
                         <p>
-                            I enjoy long walk on... just kidding. Hello! Welcome to my portfolio. I am a passionate Oject-oriented programmer.
+                            I enjoy long walks on... just kidding. Hello! Welcome to my portfolio. I am a passionate Object-oriented programmer.
                             I specialize in Python and studied .NET framework with C# in school.
                             <br />
                             I have couple of personal porjects that I'm working on and a few that I've finished. I hope to continue my Professional work, working with OOP
