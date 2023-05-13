@@ -1,5 +1,5 @@
 import React from "react";
-import Man from '../assets/man.png'
+import Me from '../assets/me.png'
 import Resume from '../assets/RESUME_NoPersonalInfo.pdf'
 import { Link } from "react-router-dom";
 
@@ -9,7 +9,7 @@ const About = () => {
             <div className="container text-center">
                 <div className="about">
                     <div className="about-img-holder">
-                        <img src={Man} className="about-img"
+                        <img src={Me} className="about-img"
                             alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page" />
                     </div>
                     <div className="about-caption">
